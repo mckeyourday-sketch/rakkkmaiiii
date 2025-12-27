@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>อย่ากดดิ 😳</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .card {
+      background: rgba(0,0,0,0.25);
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      max-width: 350px;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.15em;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    button {
+      font-size: 1.05em;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 8px;
+      position: relative;
+    }
+    .yes {
+      background: #ff4d6d;
+      color: #fff;
+    }
+    .no {
+      background: #fff;
+      color: #333;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>สวัสดีปีใหม่ 🎉</h1>
+    <p>
+      เรามีเรื่องจะบอกเธออะ…<br>
+      เขินนิดนึงนะ 😳<br><br>
+      <b>ปีใหม่นี้อยากมีเธอเป็นแฟน 💕</b>
+    </p>
+    <button class="yes" onclick="yesClick()">ตกลงสิ 💖</button>
+    <button class="no" id="runaway">เขินอะ 😳</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("runaway");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    function yesClick() {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction:column;
+          background:linear-gradient(135deg,#ff4d6d,#ff9a9e);
+          color:white;
+          font-family:'Segoe UI',sans-serif;
+          text-align:center;
+          padding:20px;
+        ">
+          <h1>เย้~ 🎆💖</h1>
+          <p style="font-size:1.4em; line-height:1.6;">
+            หนีไม่พ้นแล้วนะ 😝<br>
+            ตั้งแต่วันนี้ เธอเป็นแฟนเราแล้ว 💕
+          </p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
